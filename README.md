@@ -14,8 +14,7 @@ softwares installed
 ==================
 
 1. Clone the project
-==================
-# git clone https://github.com/SonaliHomkar/ProjectNeighbourhoodMapFinal
+git clone https://github.com/SonaliHomkar/ProjectItemCatlogAWS
 
 Getting Started
 ==============
@@ -56,5 +55,3 @@ Resources used for reference
 2. https://developers.zomato.com/api
 
 	
-# ProjectNeighbourhoodMapFinal
-# ProjectNeighbourhoodMapFinal
