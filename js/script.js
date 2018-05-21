@@ -752,7 +752,6 @@ function getZomatoApi(marker,infowindow,position,title) {
         var appUrl = "https://developers.zomato.com/api/v2.1/locations?apikey=1bdc7a9f5488e30c040d0be53e316511&radius&query=" + title + "&lat=" + position.lat 
                     + "&lon=" + position.lng + "&count=5";
         
-        
         $.ajax({
             method : "GET",
             url: appUrl,
@@ -775,9 +774,15 @@ function getZomatoApi(marker,infowindow,position,title) {
                         infowindow.marker = null;
                     });   
             },
-            error: function(xhr, status, error) {
-                infowindow.setContent('<div>' + marker.title + '</div>' +
-                  '<div>No places found</div>');
+            error: function(err) {
+                console.log(err);
+                infowindow.setContent('<div><b>' + marker.title + '</b></div>' +
+                  '<div>Due to some problem API is unable to display the nearest locations</div>');
+                infowindow.open(map, marker);
+                    // Make sure the marker property is cleared if the infowindow is closed.
+                infowindow.addListener('closeclick', function () {
+                    infowindow.marker = null;
+                });
             }
         });
 
