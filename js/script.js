@@ -776,6 +776,7 @@ function getZomatoApi(marker,infowindow,position,title) {
             },
             error: function(err) {
                 console.log(err);
+                window.alert("Due to some problem the API is unable to display the locations");
                 infowindow.setContent('<div><b>' + marker.title + '</b></div>' +
                   '<div>Due to some problem API is unable to display the nearest locations</div>');
                 infowindow.open(map, marker);
